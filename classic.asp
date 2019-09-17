@@ -17,7 +17,11 @@
             Dim conn
             Set conn = Server.CreateObject("ADODB.Connection")
             'Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CSharpGame;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
-            conn.ConnectionString = "Provider=SQLNCLI11;Server=(localdb)\MSSQLLocalDB;Trusted_Connection=yes;timeout=30;AttachDbFileName=C:\Users\Philip Greene\CSharpGame.mdf"           
+            conn.ConnectionString = "Provider=SQLNCLI11;Server=(localdb)\MSSQLLocalDB;Trusted_Connection=yes;timeout=30;AttachDbFileName=C:\Users\Philip Greene\CSharpGame.mdf"
+            
+            If conn.errors.count = 0 Then
+            Response.Write("Connected OK")
+            End If
         %>
     </p>
 
